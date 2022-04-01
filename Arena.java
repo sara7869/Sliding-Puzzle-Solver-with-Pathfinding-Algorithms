@@ -42,16 +42,20 @@ public class Arena {
 	private Point getEndPoint(int x, int y, int direction) {
 		switch (direction) {
 			case NORTH:
-				while (y > 0 && (flags[x][y - 1] & SOUTH_BLOCKED) == 0) y--;
+				while (y > 0 && (flags[x][y - 1] & SOUTH_BLOCKED) == 0)
+					y--;
 				break;
 			case SOUTH:
-				while (y < DIMENSIONS - 1 && (flags[x][y] & SOUTH_BLOCKED) == 0) y++;
+				while (y < DIMENSIONS - 1 && (flags[x][y] & SOUTH_BLOCKED) == 0)
+					y++;
 				break;
 			case EAST:
-				while (x < DIMENSIONS - 1 && (flags[x + 1][y] & WEST_BLOCKED) == 0) x++;
+				while (x < DIMENSIONS - 1 && (flags[x + 1][y] & WEST_BLOCKED) == 0)
+					x++;
 				break;
 			case WEST:
-				while (x > 0 && (flags[x][y] & WEST_BLOCKED) == 0) x--;
+				while (x > 0 && (flags[x][y] & WEST_BLOCKED) == 0)
+					x--;
 				break;
 			default:
 				throw new IllegalArgumentException("Invalid Direction: " + direction);
@@ -73,8 +77,10 @@ public class Arena {
 		g.fillRect(endX * size, endY * size, size, size);
 		// Draw Grid
 		g.setColor(Color.DARK_GRAY);
-		for (int x = 0; x < DIMENSIONS; x++) g.drawLine(x * size, 0, x * size, tileSize);
-		for (int y = 0; y < DIMENSIONS; y++) g.drawLine(0, y * size, tileSize, y * size);
+		for (int x = 0; x < DIMENSIONS; x++)
+			g.drawLine(x * size, 0, x * size, tileSize);
+		for (int y = 0; y < DIMENSIONS; y++)
+			g.drawLine(0, y * size, tileSize, y * size);
 		// Draw Boundaries
 		g.setColor(Color.RED);
 		for (int horizontal = 0; horizontal < DIMENSIONS; horizontal++) {

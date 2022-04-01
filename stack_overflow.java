@@ -1,26 +1,26 @@
 import java.util.LinkedList;
 
 // public class PokemonIceCave {
-    public class stack_overflow {
+public class stack_overflow {
 
     public static void main(String[] args) {
         int[][] iceCave1 = {
-                {0, 0, 0, 1, 0},
-                {0, 0, 0, 0, 1},
-                {0, 1, 1, 0, 0},
-                {0, 1, 0, 0, 1},
-                {0, 0, 0, 1, 0}
+                { 0, 0, 0, 1, 0 },
+                { 0, 0, 0, 0, 1 },
+                { 0, 1, 1, 0, 0 },
+                { 0, 1, 0, 0, 1 },
+                { 0, 0, 0, 1, 0 }
         };
         System.out.println(solve(iceCave1, 0, 0, 2, 4));
         System.out.println();
 
         int[][] iceCave2 = {
-                {0, 0, 0, 1, 0},
-                {0, 0, 0, 0, 1},
-                {0, 1, 1, 0, 0},
-                {0, 1, 0, 0, 1},
-                {0, 0, 0, 1, 0},
-                {0, 0, 0, 0, 0}
+                { 0, 0, 0, 1, 0 },
+                { 0, 0, 0, 0, 1 },
+                { 0, 1, 1, 0, 0 },
+                { 0, 1, 0, 0, 1 },
+                { 0, 0, 0, 1, 0 },
+                { 0, 0, 0, 0, 0 }
         };
         System.out.println(solve(iceCave2, 0, 0, 2, 5));
     }
@@ -46,7 +46,7 @@ import java.util.LinkedList;
                     iceCaveColors[nextPos.getY()][nextPos.getX()] = new Point(currPos.getX(), currPos.getY());
                     if (nextPos.getY() == endY && nextPos.getX() == endX) {
                         // we found the end point
-                        Point tmp = currPos;  // if we start from nextPos we will count one too many edges
+                        Point tmp = currPos; // if we start from nextPos we will count one too many edges
                         int count = 0;
                         while (tmp != startPoint) {
                             count++;
@@ -77,7 +77,7 @@ import java.util.LinkedList;
             i++;
         }
 
-        i--;  // reverse the last step
+        i--; // reverse the last step
 
         if (iceCaveColors[y + i * diffY][x + i * diffX] != null) {
             // we've already seen this point
